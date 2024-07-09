@@ -18,6 +18,7 @@ const initialState = {
 
 function BookForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
+  // create a state variable and set state variable equal to a state using an array
   const [authors, setAuthors] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
