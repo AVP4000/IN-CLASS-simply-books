@@ -7,7 +7,7 @@ import { deleteSingleAuthor } from '../api/authorData';
 
 function AuthorCard({ authorObj, onUpdate }) {
   // FOR DELETE, WE NEED TO REMOVE THE author AND HAVE THE VIEW RERENDER,
-  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE authorS
+  // SO WE PASS THE FUNCTION FROM THE PARENT THAT GETS THE AUTHORS
   const deleteThisAuthor = () => {
     if (window.confirm(`Delete ${authorObj.first_name}?`)) {
       deleteSingleAuthor(authorObj.firebaseKey).then(() => onUpdate());
@@ -20,7 +20,7 @@ function AuthorCard({ authorObj, onUpdate }) {
         <Card.Title>{authorObj.first_name}{authorObj.last_name}</Card.Title>
         <p className="card-text bold">{authorObj.favorite && <span>🤍<br /></span> } </p>
         {/* DYNAMIC LINK TO VIEW THE author DETAILS  */}
-        <Link href={`/author${authorObj.firebaseKey}`} passHref>
+        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE author DETAILS  */}
