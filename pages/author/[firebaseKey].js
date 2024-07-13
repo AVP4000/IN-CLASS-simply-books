@@ -29,6 +29,7 @@ export default function Viewauthor() {
         </h5>
         <a href={`mailto:${authorDetails.authorObject?.email}`}>{authorDetails.authorObject?.email}</a>
         <div>
+          {/* Below is from index.js */}
           {authorDetails.books?.map((book) => (
             <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getTheAuthorDetails} />
           ))}
