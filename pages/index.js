@@ -22,7 +22,7 @@ function Home() {
   useEffect(() => {
     getAllTheBooks();
   }, []);
-
+  // We referenced below in the ViewAuthor page - firebaseKey.js
   return (
     <div className="text-center my-4">
       <Link href="/book/new" passHref>
